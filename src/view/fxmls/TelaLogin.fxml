@@ -80,13 +80,13 @@
                   </RadialGradient>
                </textFill>
             </Label>
-            <TextField fx:id="tfCpf" layoutX="153.0" layoutY="252.0" prefHeight="25.0" prefWidth="182.0" text="Digite seu cpf">
+            <TextField fx:id="tfCpf" layoutX="153.0" layoutY="252.0" prefHeight="25.0" prefWidth="182.0" promptText="Digite seu cpf">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
             </TextField>
             <Button fx:id="btLogin" layoutX="218.0" layoutY="332.0" mnemonicParsing="false" onAction="#logar" text="Login" />
-            <PasswordField fx:id="pfSenha" layoutX="153.0" layoutY="295.0" prefHeight="25.0" prefWidth="182.0" text="Digite sua senha" />
+            <PasswordField fx:id="pfSenha" layoutX="153.0" layoutY="295.0" prefHeight="25.0" prefWidth="182.0" promptText="Digite sua senha" />
          </children>
       </AnchorPane>
    </children>

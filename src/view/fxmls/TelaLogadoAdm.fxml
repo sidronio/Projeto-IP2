@@ -7,7 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
@@ -16,7 +16,25 @@
    <children>
       <AnchorPane layoutX="-4.0" prefHeight="370.0" prefWidth="576.0">
          <children>
-            <MenuBar layoutX="3.0" layoutY="2.0" prefHeight="25.0" prefWidth="227.0">
+            <ImageView fitHeight="439.0" fitWidth="573.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagens/old-spell-book-candle-mood-witch-magic-animated-gif.gif" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbUser" layoutX="389.0" layoutY="392.0" prefHeight="21.0" prefWidth="173.0" text="Usuário: ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="0.24761904761904763">
+                     <stops>
+                        <Stop color="#171616" />
+                        <Stop color="#c4281a" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <MenuBar layoutX="176.0" layoutY="14.0" opacity="0.26" prefHeight="25.0" prefWidth="227.0">
               <menus>
                 <Menu mnemonicParsing="false" text="Cadastrar">
                   <items>
@@ -39,46 +57,9 @@
                 </Menu>
                   <Menu mnemonicParsing="false" text="Sair">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Fechar o Aplicativo" />
+                      <MenuItem mnemonicParsing="false" text="Sair do Aplicativo" />
                     </items>
                   </Menu>
-              </menus>
-            </MenuBar>
-            <ImageView fitHeight="439.0" fitWidth="573.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../imagens/old-spell-book-candle-mood-witch-magic-animated-gif.gif" />
-               </image>
-            </ImageView>
-            <Label layoutX="403.0" layoutY="4.0" prefHeight="21.0" prefWidth="173.0" text="Usuário: ">
-               <textFill>
-                  <RadialGradient centerX="0.5" centerY="0.7047619047619047" radius="0.5">
-                     <stops>
-                        <Stop color="#171616" />
-                        <Stop color="#fc0707" offset="1.0" />
-                     </stops>
-                  </RadialGradient>
-               </textFill>
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <MenuBar layoutX="3.0" layoutY="2.0" opacity="0.26" prefHeight="25.0" prefWidth="190.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="File">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
               </menus>
             </MenuBar>
          </children>
