@@ -67,6 +67,13 @@ public class ControladorTelaLogadoAdm extends AnchorPane{
 	private void cadastrarLivro(){
 		Principal.mudarTela(new ControladorTelaCadastroLivro());
 	}
-
+	@FXML
+	private void buscarAluno(){
+		Principal.mudarTela(new ControladorTelaBuscarAluno());
+	}
+	@FXML
+	private void buscarLivro(){
+		Principal.mudarTela(new ControladorTelaBuscarLivro());
+	}
 
 }

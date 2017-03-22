@@ -13,6 +13,7 @@ public class Principal extends Application{
 	@Override
 	public void start(Stage arg0) throws Exception {
 		estagioPrincipal = new Stage();
+		estagioPrincipal.setResizable(false);
 		//currentStage.initStyle(StageStyle.UNDECORATED);
 		//estagioPrincipal.getIcons().add(new Image("/imagens/Main Icon.png"));
 		estagioPrincipal.setTitle("Livraria SEBO");
@@ -21,8 +22,8 @@ public class Principal extends Application{
 	}
 	public static void mudarTela(Parent painel){
 		estagioPrincipal.setScene(new Scene(painel));
-		estagioPrincipal.centerOnScreen();
 		//estagioPrincipal.getScene().setFill(Color.BLACK);
+		estagioPrincipal.centerOnScreen();
 		estagioPrincipal.show();
 	}
 	public static void main(String args[]){

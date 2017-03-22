@@ -49,8 +49,8 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Buscar">
                   <items>
-                    <MenuItem fx:id="itemBuscarAluno" mnemonicParsing="false" text="Buscar Aluno" />
-                        <MenuItem fx:id="itemBuscarLivro" mnemonicParsing="false" text="Buscar Livro" />
+                    <MenuItem fx:id="itemBuscarAluno" mnemonicParsing="false" onAction="#buscarAluno" text="Buscar Aluno" />
+                        <MenuItem fx:id="itemBuscarLivro" mnemonicParsing="false" onAction="#buscarLivro" text="Buscar Livro" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Sobre">

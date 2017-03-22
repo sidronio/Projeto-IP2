@@ -29,7 +29,7 @@ public class ControladorLivro {
 			
 	}
 	public void remover(Livro livro) throws NegocioException{
-		if(repositorio.existe(livro) != null){
+		if(repositorio.existeCodigo((int)livro.getIsbn())){
 			this.repositorio.remover(livro);
 		}
 		else
@@ -37,7 +37,7 @@ public class ControladorLivro {
 		
 	}
 	public void atualizar(Livro livro) throws NegocioException{
-		if(repositorio.existe(livro) != null){
+		if(repositorio.existeCodigo((int)livro.getIsbn())){
 			this.repositorio.atualizar(livro);
 		}
 		else

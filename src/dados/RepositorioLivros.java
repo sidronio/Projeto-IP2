@@ -43,7 +43,7 @@ public class RepositorioLivros implements InterfaceCRUD<Livro,Integer>{
 				{
 					this.livros.add(livros.get(i));
 				}
-				System.out.println("Livros Carregados");
+			
 			} 
 			catch (IOException | ClassNotFoundException e) 
 			{
