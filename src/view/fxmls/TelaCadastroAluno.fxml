@@ -37,8 +37,8 @@
             <TextField layoutX="124.0" layoutY="292.0" prefHeight="25.0" prefWidth="324.0" />
             <TextField layoutX="71.0" layoutY="215.0" prefHeight="25.0" prefWidth="236.0" />
             <TextField layoutX="71.0" layoutY="254.0" prefHeight="25.0" prefWidth="236.0" />
-            <Button layoutX="208.0" layoutY="342.0" mnemonicParsing="false" text="Cadastrar" />
-            <Button layoutX="286.0" layoutY="342.0" mnemonicParsing="false" text="Cancelar" />
+            <Button fx:id="btCadastrarAluno" layoutX="208.0" layoutY="342.0" mnemonicParsing="false" text="Cadastrar" />
+            <Button fx:id="btCancelar" layoutX="286.0" layoutY="342.0" mnemonicParsing="false" text="Cancelar" />
             <ImageView fx:id="faq" fitHeight="25.0" fitWidth="34.0" layoutX="521.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../imagens/FAQ-icon.png" />

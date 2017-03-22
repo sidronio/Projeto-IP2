@@ -13,9 +13,9 @@
    <children>
       <AnchorPane layoutX="5.0" layoutY="5.0">
          <children>
-            <AnchorPane prefHeight="400.0" prefWidth="538.0">
+            <AnchorPane prefHeight="414.0" prefWidth="544.0">
                <children>
-                  <ImageView fitHeight="419.0" fitWidth="571.0" layoutX="-11.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="425.0" fitWidth="566.0" layoutX="-11.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../imagens/old-spell-book-candle-mood-witch-magic-animated-gif.gif" />
                      </image>
@@ -35,8 +35,8 @@
                   <TextField layoutX="81.0" layoutY="171.0" prefHeight="25.0" prefWidth="298.0" />
                   <TextField layoutX="81.0" layoutY="207.0" prefHeight="25.0" prefWidth="236.0" />
                   <TextField layoutX="81.0" layoutY="253.0" prefHeight="25.0" prefWidth="236.0" />
-                  <Button layoutX="208.0" layoutY="342.0" mnemonicParsing="false" text="Cadastrar" />
-                  <Button layoutX="286.0" layoutY="342.0" mnemonicParsing="false" text="Cancelar" />
+                  <Button fx:id="btCadastrarLivro" layoutX="208.0" layoutY="342.0" mnemonicParsing="false" text="Cadastrar" />
+                  <Button fx:id="btCancelar" layoutX="286.0" layoutY="342.0" mnemonicParsing="false" text="Cancelar" />
                   <ImageView fx:id="faq" fitHeight="25.0" fitWidth="34.0" layoutX="521.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../imagens/FAQ-icon.png" />
