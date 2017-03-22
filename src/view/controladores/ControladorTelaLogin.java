@@ -1,11 +1,16 @@
 package view.controladores;
 
+import exceptions.NegocioException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import negocio.beans.Usuario;
+import negocio.controladores.Contexto;
+import negocio.controladores.Fachada;
 import view.Principal;
 
 public class ControladorTelaLogin extends AnchorPane {
@@ -22,13 +27,12 @@ public class ControladorTelaLogin extends AnchorPane {
 	public ControladorTelaLogin(){
 		try{
 			FXMLLoader loader = new FXMLLoader(ControladorTelaLogin.class.getClass().getResource("/view/fxmls/TelaLogin.fxml"));
-			//loader.setRoot(null);
-			//loader.setRoot(this);
+			
 			loader.setController(this);
 			
 			this.getChildren().add(loader.load());
 		}catch(Exception e){
-			System.out.println(e.getMessage());
+			
 			e.printStackTrace();
 		}
 	 	
@@ -36,7 +40,20 @@ public class ControladorTelaLogin extends AnchorPane {
 	
 	@FXML
 	public void logar(){
-		Principal.mudarTela(new ControladorTelaLogadoAdm());
+		try {
+			Usuario usuario = Fachada.getInstance().autenticar(tfCpf.getText(),pfSenha.getText());
+			if(usuario != null){
+				Principal.mudarTela(new ControladorTelaLogadoAdm());
+				Contexto.getIntance().setUsuarioLogado(usuario);
+			}
+		} catch (NegocioException e) {
+			Alert dialogo = new Alert(Alert.AlertType.ERROR);
+			dialogo.setContentText(e.getMessage());
+			dialogo.setHeaderText(null);
+			dialogo.show();
+		}
+			
+		
 	}
 	
 
