@@ -1,30 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="-5.0" layoutY="-5.0" prefHeight="381.0" prefWidth="491.0">
+      <AnchorPane layoutX="-5.0" layoutY="-5.0" prefHeight="367.0" prefWidth="491.0">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <BoxBlur />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
          <children>
-            <Label layoutX="128.0" layoutY="24.0" prefHeight="17.0" prefWidth="236.0" text="Livraria Sebo">
+            <ImageView fitHeight="381.0" fitWidth="491.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagens/old-spell-book-candle-mood-witch-magic-animated-gif.gif" />
+               </image>
+            </ImageView>
+            <Label layoutX="171.0" layoutY="26.0" text="Livraria Sebo">
                <font>
-                  <Font name="System Bold Italic" size="36.0" />
+                  <Font size="29.0" />
                </font>
+               <textFill>
+                  <LinearGradient endX="0.11904761904761907" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
             </Label>
-            <Label layoutX="205.0" layoutY="77.0" text="Tela Login" textAlignment="JUSTIFY" underline="true">
+            <Label layoutX="184.0" layoutY="69.0" text="Acesso ao Sistema">
                <font>
-                  <Font name="System Italic" size="18.0" />
+                  <Font size="15.0" />
                </font>
+               <textFill>
+                  <RadialGradient centerX="0.5111111111111111" centerY="0.6285714285714286" radius="0.5">
+                     <stops>
+                        <Stop color="#b90909" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
             </Label>
-            <Label layoutX="43.0" layoutY="182.0" text="Cpf:" />
-            <TextField layoutX="76.0" layoutY="178.0" prefHeight="25.0" prefWidth="228.0" />
-            <Label layoutX="36.0" layoutY="222.0" text="Senha:" />
-            <TextField layoutX="76.0" layoutY="218.0" prefHeight="25.0" prefWidth="228.0" />
-            <Button layoutX="149.0" layoutY="255.0" mnemonicParsing="false" text="Login" />
+            <Label layoutX="109.0" layoutY="256.0" text="Cpf:">
+               <textFill>
+                  <RadialGradient centerX="0.5111111111111111" centerY="0.5523809523809524" radius="0.5">
+                     <stops>
+                        <Stop color="#b90909" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="102.0" layoutY="299.0" text="Senha:">
+               <textFill>
+                  <RadialGradient centerX="0.5111111111111111" centerY="0.5523809523809524" radius="0.5">
+                     <stops>
+                        <Stop color="#b90909" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <TextField fx:id="tfCpf" layoutX="153.0" layoutY="252.0" prefHeight="25.0" prefWidth="182.0" text="Digite seu cpf">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btLogin" layoutX="218.0" layoutY="332.0" mnemonicParsing="false" onAction="#logar" text="Login" />
+            <PasswordField fx:id="pfSenha" layoutX="153.0" layoutY="295.0" prefHeight="25.0" prefWidth="182.0" text="Digite sua senha" />
          </children>
       </AnchorPane>
    </children>
