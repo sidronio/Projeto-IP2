@@ -11,12 +11,14 @@ import java.util.ArrayList;
 import negocio.beans.Administrador;
 
 public class RepositorioAdministradores  implements InterfaceCRUD<Administrador,String>{
+
 	private ArrayList<Administrador> administradores;
+	private static final String nomeArquivo = "administradores.dat";
 
 	public RepositorioAdministradores() 
 	{
 		this.administradores = new ArrayList<Administrador>();
-		if(new File("administradores.dat").canRead() == true)
+		if(new File(nomeArquivo).canRead() == true)
 		{
 			this.lerArquivo();
 		}
@@ -29,12 +31,12 @@ public class RepositorioAdministradores  implements InterfaceCRUD<Administrador,
 	{
 		FileInputStream inc = null;
 		ObjectInputStream ois = null;
-		if(new File("administradores.dat").canRead() == true)
+		if(new File(nomeArquivo).canRead() == true)
 		{
 			
 			try 
 			{
-				inc = new FileInputStream("administradores.dat");
+				inc = new FileInputStream(nomeArquivo);
 				 ois = new ObjectInputStream(inc);
 				
 				ArrayList <Administrador> administradores = (ArrayList <Administrador>) ois.readObject();
@@ -42,11 +44,11 @@ public class RepositorioAdministradores  implements InterfaceCRUD<Administrador,
 				{
 					this.administradores.add(administradores.get(i));
 				}
-				
+			
 			} 
 			catch (IOException | ClassNotFoundException e) 
 			{
-				
+				e.printStackTrace();
 			} 
 			finally{
 				try {
@@ -64,7 +66,7 @@ public class RepositorioAdministradores  implements InterfaceCRUD<Administrador,
 		ObjectOutputStream OUS = null;
 		try
 		{
-			FOS = new FileOutputStream("administradores.dat");
+			FOS = new FileOutputStream(nomeArquivo);
 			OUS  = new ObjectOutputStream(FOS);
 			
 			OUS.writeObject(administradores);
@@ -72,7 +74,7 @@ public class RepositorioAdministradores  implements InterfaceCRUD<Administrador,
 		}
 		catch(IOException e)
 		{
-			
+			e.printStackTrace();
 		}
 		finally{
 			try {

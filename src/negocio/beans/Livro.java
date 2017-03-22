@@ -1,6 +1,8 @@
 package negocio.beans;
 
-public class Livro {
+import java.io.Serializable;
+
+public class Livro implements Serializable {
 	
 	private long isbn;
 	private String titulo;

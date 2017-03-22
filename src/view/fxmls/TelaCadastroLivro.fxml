@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -8,8 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="399.0" prefWidth="540.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<AnchorPane prefHeight="399.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="5.0" layoutY="5.0">
          <children>
@@ -30,13 +34,13 @@
                   <Label layoutX="21.0" layoutY="175.0" text="Editora:" />
                   <Label layoutX="10.0" layoutY="211.0" text="Exemplares:" />
                   <Label layoutX="22.0" layoutY="257.0" text="Isbn:" />
-                  <TextField layoutX="84.0" layoutY="92.0" prefHeight="25.0" prefWidth="298.0" />
-                  <TextField layoutX="81.0" layoutY="134.0" prefHeight="25.0" prefWidth="236.0" />
-                  <TextField layoutX="81.0" layoutY="171.0" prefHeight="25.0" prefWidth="298.0" />
-                  <TextField layoutX="81.0" layoutY="207.0" prefHeight="25.0" prefWidth="236.0" />
-                  <TextField layoutX="81.0" layoutY="253.0" prefHeight="25.0" prefWidth="236.0" />
-                  <Button fx:id="btCadastrarLivro" layoutX="208.0" layoutY="342.0" mnemonicParsing="false" text="Cadastrar" />
-                  <Button fx:id="btCancelar" layoutX="286.0" layoutY="342.0" mnemonicParsing="false" text="Cancelar" />
+                  <TextField fx:id="txtTitulo" layoutX="84.0" layoutY="92.0" prefHeight="25.0" prefWidth="298.0" />
+                  <TextField fx:id="txtAutor" layoutX="81.0" layoutY="134.0" prefHeight="25.0" prefWidth="236.0" />
+                  <TextField fx:id="txtEditora" layoutX="81.0" layoutY="171.0" prefHeight="25.0" prefWidth="298.0" />
+                  <TextField fx:id="txtExemplares" layoutX="81.0" layoutY="207.0" prefHeight="25.0" prefWidth="236.0" />
+                  <TextField fx:id="txtIsbn" layoutX="81.0" layoutY="253.0" prefHeight="25.0" prefWidth="236.0" />
+                  <Button fx:id="btCadastrarLivro" layoutX="208.0" layoutY="342.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar" />
+                  <Button fx:id="btCancelar" layoutX="286.0" layoutY="342.0" mnemonicParsing="false" onAction="#voltar" text="Cancelar" />
                   <ImageView fx:id="faq" fitHeight="25.0" fitWidth="34.0" layoutX="521.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../imagens/FAQ-icon.png" />

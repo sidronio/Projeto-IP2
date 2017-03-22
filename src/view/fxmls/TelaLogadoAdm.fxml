@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -11,8 +17,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="-4.0" prefHeight="370.0" prefWidth="576.0">
          <children>
@@ -34,30 +39,30 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <MenuBar layoutX="176.0" layoutY="14.0" opacity="0.26" prefHeight="25.0" prefWidth="227.0">
+            <MenuBar fx:id="menuOpcoes" layoutX="176.0" layoutY="14.0" opacity="0.26" prefHeight="25.0" prefWidth="227.0">
               <menus>
-                <Menu mnemonicParsing="false" text="Cadastrar">
+                <Menu fx:id="itemCad" mnemonicParsing="false" text="Cadastrar">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Cadastrar Aluno" />
-                        <MenuItem mnemonicParsing="false" text="Cadastrar Livro" />
+                    <MenuItem fx:id="itemCadastroAluno" mnemonicParsing="false" onAction="#cadastrarAluno" text="Cadastrar Aluno" />
+                        <MenuItem fx:id="itemCadastroLivro" mnemonicParsing="false" onAction="#cadastrarLivro" text="Cadastrar Livro" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Buscar">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Buscar Aluno" />
-                        <MenuItem mnemonicParsing="false" text="Buscar Livro" />
+                    <MenuItem fx:id="itemBuscarAluno" mnemonicParsing="false" text="Buscar Aluno" />
+                        <MenuItem fx:id="itemBuscarLivro" mnemonicParsing="false" text="Buscar Livro" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Sobre">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Sobre o Software" />
-                        <MenuItem mnemonicParsing="false" text="Contate-nos" />
-                        <MenuItem mnemonicParsing="false" text="Avalie-nos" />
+                    <MenuItem fx:id="itemSobre" mnemonicParsing="false" text="Sobre o Software" />
+                        <MenuItem fx:id="itemContate" mnemonicParsing="false" text="Contate-nos" />
+                        <MenuItem fx:id="itemAvalie" mnemonicParsing="false" text="Avalie-nos" />
                   </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="Sair">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Sair do Aplicativo" />
+                      <MenuItem fx:id="itemSair" mnemonicParsing="false" text="Sair do Aplicativo" />
                     </items>
                   </Menu>
               </menus>

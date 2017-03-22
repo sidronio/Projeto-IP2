@@ -43,8 +43,9 @@ public class ControladorTelaLogin extends AnchorPane {
 		try {
 			Usuario usuario = Fachada.getInstance().autenticar(tfCpf.getText(),pfSenha.getText());
 			if(usuario != null){
-				Principal.mudarTela(new ControladorTelaLogadoAdm());
+
 				Contexto.getIntance().setUsuarioLogado(usuario);
+				Principal.mudarTela(new ControladorTelaLogadoAdm());
 			}
 		} catch (NegocioException e) {
 			Alert dialogo = new Alert(Alert.AlertType.ERROR);

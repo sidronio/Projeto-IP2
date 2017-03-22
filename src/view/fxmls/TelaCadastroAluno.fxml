@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -8,8 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="538.0">
          <children>
@@ -30,15 +34,15 @@
             <Label layoutX="6.0" layoutY="296.0" text="Instituição de ensino:" />
             <Label layoutX="23.0" layoutY="219.0" text="Curso:" />
             <Label layoutX="18.0" layoutY="258.0" text="Período:" />
-            <TextField layoutX="71.0" layoutY="79.0" prefHeight="25.0" prefWidth="298.0" />
-            <TextField layoutX="71.0" layoutY="116.0" prefHeight="25.0" prefWidth="236.0" />
-            <TextField layoutX="71.0" layoutY="150.0" prefHeight="25.0" prefWidth="298.0" />
-            <TextField layoutX="71.0" layoutY="183.0" prefHeight="25.0" prefWidth="236.0" />
-            <TextField layoutX="124.0" layoutY="292.0" prefHeight="25.0" prefWidth="324.0" />
-            <TextField layoutX="71.0" layoutY="215.0" prefHeight="25.0" prefWidth="236.0" />
-            <TextField layoutX="71.0" layoutY="254.0" prefHeight="25.0" prefWidth="236.0" />
-            <Button fx:id="btCadastrarAluno" layoutX="208.0" layoutY="342.0" mnemonicParsing="false" text="Cadastrar" />
-            <Button fx:id="btCancelar" layoutX="286.0" layoutY="342.0" mnemonicParsing="false" text="Cancelar" />
+            <TextField fx:id="txtNome" layoutX="71.0" layoutY="79.0" prefHeight="25.0" prefWidth="298.0" />
+            <TextField fx:id="txtCpf" layoutX="71.0" layoutY="116.0" prefHeight="25.0" prefWidth="236.0" />
+            <TextField fx:id="txtEmail" layoutX="71.0" layoutY="150.0" prefHeight="25.0" prefWidth="298.0" />
+            <TextField fx:id="txtSenha" layoutX="71.0" layoutY="183.0" prefHeight="25.0" prefWidth="236.0" />
+            <TextField fx:id="txtInstituicao" layoutX="124.0" layoutY="292.0" prefHeight="25.0" prefWidth="324.0" />
+            <TextField fx:id="txtCurso" layoutX="71.0" layoutY="215.0" prefHeight="25.0" prefWidth="236.0" />
+            <TextField fx:id="txtPeriodo" layoutX="71.0" layoutY="254.0" prefHeight="25.0" prefWidth="236.0" />
+            <Button fx:id="btCadastrarAluno" layoutX="208.0" layoutY="342.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar" />
+            <Button fx:id="btVoltar" layoutX="286.0" layoutY="342.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
             <ImageView fx:id="faq" fitHeight="25.0" fitWidth="34.0" layoutX="521.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../imagens/FAQ-icon.png" />

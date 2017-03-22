@@ -4,54 +4,43 @@ import exceptions.NegocioException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import negocio.beans.Aluno;
+import negocio.beans.Livro;
 import negocio.controladores.Fachada;
 import view.Principal;
 
-public class ControladorTelaCadastroAluno extends  AnchorPane{
+public class ControladorTelaCadastroLivro extends AnchorPane {
+		
 	
 	@FXML
-	private TextField txtNome;
+	private TextField txtTitulo;
 	
 	@FXML
-	private TextField txtCpf;
+	private TextField txtAutor;
 	
 	@FXML
-	private TextField txtEmail;
+	private TextField txtEditora;
+
+	@FXML
+	private TextField txtExemplares;
 	
 	@FXML
-	private TextField txtSenha;
+	private TextField txtIsbn;
 	
-	@FXML
-	private TextField txtCurso;
-	
-	@FXML
-	private TextField txtPeriodo;
-	
-	@FXML
-	private TextField txtInstituicao;
-	
-	@FXML
-	private Button btCadastrarAluno;
-	
-	@FXML
-	private Button btVoltar;
-	
-	public ControladorTelaCadastroAluno(){
+	public  ControladorTelaCadastroLivro()
+	{
 		try{
-			FXMLLoader loader = new FXMLLoader(ControladorTelaLogin.class.getClass().getResource("/view/fxmls/TelaCadastroAluno.fxml"));
+			FXMLLoader loader = new FXMLLoader(ControladorTelaLogin.class.getClass().getResource("/view/fxmls/TelaCadastroLivro.fxml"));
 			
 			loader.setController(this);
 			
 			this.getChildren().add(loader.load());
 		}catch(Exception e){
-			
 			e.printStackTrace();
 		}
 	}
+	
 	
 	@FXML
 	private void cadastrar(){
@@ -59,18 +48,23 @@ public class ControladorTelaCadastroAluno extends  AnchorPane{
 		Alert dialogo = new Alert(Alert.AlertType.INFORMATION);
 		dialogo.setHeaderText(null);
 		
-		int periodo;
+		int isbn;
 		try{
-			periodo = Integer.valueOf(txtPeriodo.getText());
+			isbn = Integer.valueOf(txtIsbn.getText());
 		}catch(NumberFormatException n){
-			periodo = 1;
+			isbn = 1;
+		}
+		int exemplares;
+		try{
+			exemplares = Integer.valueOf(txtExemplares.getText());
+		}catch(NumberFormatException n){
+			exemplares = 0;
 		}
 	
 		
 		try {
-			Aluno aluno = new Aluno(txtNome.getText(),txtCpf.getText(),txtEmail.getText(),txtSenha.getText(),
-					txtInstituicao.getText(),txtCurso.getText(),periodo);
-			Fachada.getInstance().cadastrarAluno(aluno);
+			Livro livro = new Livro(isbn,txtTitulo.getText(),txtEditora.getText(),txtAutor.getText(),exemplares);
+			Fachada.getInstance().cadastrarLivro(livro);
 			
 			dialogo.setContentText("Cadastrado com sucesso!");
 			dialogo.show();
@@ -85,4 +79,5 @@ public class ControladorTelaCadastroAluno extends  AnchorPane{
 	private void voltar(){
 		Principal.mudarTela(new ControladorTelaLogadoAdm());
 	}
+	
 }

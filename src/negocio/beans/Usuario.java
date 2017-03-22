@@ -1,6 +1,8 @@
 package negocio.beans;
 
-public abstract class Usuario {
+import java.io.Serializable;
+
+public abstract class Usuario implements Serializable{
 	private String nome;
 	private String cpf;
 	private String email;
@@ -9,11 +11,14 @@ public abstract class Usuario {
 	
 	
 	public Usuario(String nome, String cpf, String email, String senha) {
-		super();
+
 		this.setCpf(cpf);
 		this.setNome(nome);
 		this.setEmail(email);
 		this.setSenha(senha);
+	}
+	public Usuario(){
+		
 	}
 	public String getNome() {
 		return nome;

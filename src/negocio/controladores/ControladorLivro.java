@@ -15,8 +15,14 @@ public class ControladorLivro {
 	}
 	
 	public void cadastrarLivro(Livro livro) throws NegocioException{
-		if(repositorio.existe(livro) == null){
-			this.repositorio.cadastrar(livro);
+		if(!repositorio.existeCodigo((int) livro.getIsbn()) ){
+			if(livro.getTitulo().trim().length() > 2)
+				if(livro.getAutor().trim().length() > 4)
+					this.repositorio.cadastrar(livro);
+				else
+					throw new NegocioException("Autor inválido");
+			else
+				throw new NegocioException("título inválido");
 		}
 		else
 			throw new NegocioException("O livro já está cadastrado");

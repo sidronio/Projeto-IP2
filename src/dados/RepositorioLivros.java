@@ -140,7 +140,7 @@ public class RepositorioLivros implements InterfaceCRUD<Livro,Integer>{
 		Livro resultado = null;
 		for (int i = 0; i < this.livros.size(); i++) 
 		{
-			if (this.livros.get(i).equals(livro)) 
+			if (this.livros.get(i).getIsbn() == livro.getIsbn()) 
 			{
 				return resultado;
 				
