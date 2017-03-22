@@ -31,17 +31,22 @@ public class Fachada {
 		return instance;
 	}
 	public Usuario autenticar(String cpf, String senha) throws NegocioException{
-		for(Administrador a : this.administradores.listar()){
-			if(a.getCpf().equals(cpf) && a.getSenha().equals(senha)){
-				return a;	
+		ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+		try{
+			usuarios.addAll(this.administradores.listar());
+			usuarios.addAll(this.alunos.listar());
+		}catch(NegocioException e){
+		
+		}
+		for(Usuario a : this.administradores.listar()){
+			if(a.getCpf().equals(cpf)){
+				if(a.getSenha().equals(senha))
+					return a;	
+				else
+					throw new NegocioException("Senha incorreta");
 			}
 		}
-		for(Aluno a : this.alunos.listar()){
-			if(a.getCpf().equals(cpf) && a.getSenha().equals(senha)){
-				return a;	
-			}
-		}
-		throw new NegocioException("Login ou Cpf inválidos");
+		throw new NegocioException("CPF não cadastrado");
 		
 	}
 	public void cadastrarAluno(Aluno aluno) throws NegocioException{

@@ -16,6 +16,7 @@ public class ControladorAluno {
 	}
 	
 	
+	
 	public void cadastrar(Aluno aluno) throws NegocioException{
 		if(Validadores.validaCPF(aluno.getCpf())){
 			if(Validadores.validaSenha(aluno.getSenha())){
@@ -50,5 +51,6 @@ public class ControladorAluno {
 		else
 			return this.repositorio.listar();
 	}
+	
 	
 }
