@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import negocio.beans.Administrador;
 import negocio.beans.Usuario;
 import negocio.controladores.Contexto;
 import negocio.controladores.Fachada;
@@ -43,9 +44,11 @@ public class ControladorTelaLogin extends AnchorPane {
 		try {
 			Usuario usuario = Fachada.getInstance().autenticar(tfCpf.getText(),pfSenha.getText());
 			if(usuario != null){
-
 				Contexto.getIntance().setUsuarioLogado(usuario);
-				Principal.mudarTela(new ControladorTelaLogadoAdm());
+				if(usuario instanceof Administrador)
+					Principal.mudarTela(new ControladorTelaLogadoAdm());
+				else
+					Principal.mudarTela(new ControladorTelaLogadoAluno());
 			}
 		} catch (NegocioException e) {
 			Alert dialogo = new Alert(Alert.AlertType.ERROR);

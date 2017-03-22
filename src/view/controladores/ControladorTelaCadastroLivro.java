@@ -48,17 +48,17 @@ public class ControladorTelaCadastroLivro extends AnchorPane {
 		Alert dialogo = new Alert(Alert.AlertType.INFORMATION);
 		dialogo.setHeaderText(null);
 		
-		int isbn;
+		int isbn =0;
 		try{
 			isbn = Integer.valueOf(txtIsbn.getText());
 		}catch(NumberFormatException n){
 			isbn = 1;
 		}
-		int exemplares;
+		int exemplares = 0;
 		try{
 			exemplares = Integer.valueOf(txtExemplares.getText());
 		}catch(NumberFormatException n){
-			exemplares = 0;
+			exemplares = 1;
 		}
 	
 		

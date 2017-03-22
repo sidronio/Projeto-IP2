@@ -16,6 +16,7 @@ public class Livro implements Serializable {
 		this.setAutor(autor);
 		this.setEditora(editora);
 		this.setTitulo(titulo);
+		this.setExemplares(exemplares);
 	}
 	
 	public long getIsbn() {

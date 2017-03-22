@@ -11,9 +11,10 @@ import java.util.ArrayList;
 import negocio.beans.Emprestimo;
 
 public class RepositorioEmprestimos implements InterfaceCRUD<Emprestimo,Integer>{
+	private static RepositorioEmprestimos instance;
 	private ArrayList<Emprestimo> emprestimos;
 
-	public RepositorioEmprestimos() 
+	private RepositorioEmprestimos() 
 	{
 		this.emprestimos = new ArrayList<Emprestimo>();
 		if(new File("emprestimos.dat").canRead() == true)
@@ -24,6 +25,11 @@ public class RepositorioEmprestimos implements InterfaceCRUD<Emprestimo,Integer>
 		{
 			this.salvarArquivo();
 		}
+	}
+	public static RepositorioEmprestimos getInstance(){
+		if(instance == null)
+			instance = new RepositorioEmprestimos();
+		return instance;
 	}
 	private void lerArquivo() 
 	{

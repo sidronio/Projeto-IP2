@@ -38,7 +38,7 @@ public class Fachada {
 		}catch(NegocioException e){
 		
 		}
-		for(Usuario a : this.administradores.listar()){
+		for(Usuario a : usuarios){
 			if(a.getCpf().equals(cpf)){
 				if(a.getSenha().equals(senha))
 					return a;	

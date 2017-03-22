@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="439.0" prefWidth="579.0">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="399.0" prefWidth="540.0">
+               <children>
+                  <AnchorPane layoutX="5.0" layoutY="5.0">
+                     <children>
+                        <AnchorPane prefHeight="414.0" prefWidth="544.0">
+                           <children>
+                              <ImageView fitHeight="455.0" fitWidth="590.0" layoutX="-21.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../imagens/old-spell-book-candle-mood-witch-magic-animated-gif.gif" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="199.0" layoutY="14.0" text="Buscar Livro">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="59.0" layoutY="69.0" text="Título:" />
+                              <TextField fx:id="txtTitulo" layoutX="109.0" layoutY="65.0" prefHeight="25.0" prefWidth="298.0" />
+                              <Button fx:id="btVoltar" layoutX="507.0" layoutY="350.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+                              <ImageView fx:id="imgBuscar" fitHeight="25.0" fitWidth="34.0" layoutX="424.0" layoutY="65.0" onMouseClicked="#buscar" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../imagens/Search-2-icon.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblExemplares" layoutX="146.0" layoutY="259.0" text="Exemplares:" textFill="#fcf6f6" />
+                              <Label fx:id="lblEditora" layoutX="157.0" layoutY="224.0" text="Editora:" textFill="#f2f0f0" />
+                              <Label fx:id="lblAutor" layoutX="161.0" layoutY="188.0" text="Autor:" textFill="#f5f0f0" />
+                              <Button fx:id="btAlugar" layoutX="194.0" layoutY="350.0" mnemonicParsing="false" onAction="#alugar" prefHeight="25.0" prefWidth="143.0" text="Alugar" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

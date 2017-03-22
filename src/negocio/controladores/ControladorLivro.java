@@ -10,8 +10,9 @@ import negocio.beans.Livro;
 public class ControladorLivro {
 	private InterfaceCRUD<Livro,Integer> repositorio;
 	
+	
 	public ControladorLivro(){
-		this.repositorio = new RepositorioLivros();
+		this.repositorio = RepositorioLivros.getInstance();
 	}
 	
 	public void cadastrarLivro(Livro livro) throws NegocioException{

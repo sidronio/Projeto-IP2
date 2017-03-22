@@ -26,22 +26,15 @@
                   <Image url="@../../imagens/old-spell-book-candle-mood-witch-magic-animated-gif.gif" />
                </image>
             </ImageView>
-            <Label fx:id="lbUser" layoutX="378.0" layoutY="385.0" prefHeight="21.0" prefWidth="173.0" text="Usuário: " textFill="#c28b1b">
+            <Label fx:id="lbUser" layoutX="353.0" layoutY="382.0" prefHeight="21.0" prefWidth="173.0" text="Usuário: " textFill="#c2721b">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <MenuBar fx:id="menuOpcoes" layoutX="176.0" layoutY="14.0" opacity="0.26" prefHeight="25.0" prefWidth="227.0">
+            <MenuBar fx:id="menuOpcoes" layoutX="199.0" layoutY="14.0" opacity="0.26" prefHeight="25.0" prefWidth="154.0">
               <menus>
-                <Menu fx:id="itemCad" mnemonicParsing="false" text="Cadastrar">
-                  <items>
-                    <MenuItem fx:id="itemCadastroAluno" mnemonicParsing="false" onAction="#cadastrarAluno" text="Cadastrar Aluno" />
-                        <MenuItem fx:id="itemCadastroLivro" mnemonicParsing="false" onAction="#cadastrarLivro" text="Cadastrar Livro" />
-                  </items>
-                </Menu>
                 <Menu mnemonicParsing="false" text="Buscar">
                   <items>
-                    <MenuItem fx:id="itemBuscarAluno" mnemonicParsing="false" onAction="#buscarAluno" text="Buscar Aluno" />
                         <MenuItem fx:id="itemBuscarLivro" mnemonicParsing="false" onAction="#buscarLivro" text="Buscar Livro" />
                   </items>
                 </Menu>

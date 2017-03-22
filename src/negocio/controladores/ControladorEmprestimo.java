@@ -5,26 +5,33 @@ import java.util.Calendar;
 
 import dados.InterfaceCRUD;
 import dados.RepositorioEmprestimos;
+import dados.RepositorioLivros;
 import exceptions.NegocioException;
-import negocio.beans.Aluno;
 import negocio.beans.Emprestimo;
 import negocio.beans.Livro;
 
 public class ControladorEmprestimo {
 	
 	private InterfaceCRUD<Emprestimo,Integer> repositorio;
+	private InterfaceCRUD<Livro,Integer> repositorioLivros;
 	
 	public ControladorEmprestimo(){
-		this.repositorio = new RepositorioEmprestimos();
+		this.repositorio = RepositorioEmprestimos.getInstance();
+		this.repositorioLivros = RepositorioLivros.getInstance(); 
 	}
 	
 	public void cadastrar(Emprestimo emprestimo) throws NegocioException{
 		if(repositorio.existe(emprestimo) == null){
-			Calendar dataEntrega = Calendar.getInstance();
-			dataEntrega.add(Calendar.DATE, 15);
-			emprestimo.setDataAluguel(Calendar.getInstance());
-			emprestimo.setDataEntrega(dataEntrega);
-			this.repositorio.cadastrar(emprestimo);
+			if(emprestimo.getLivro().getExemplares() > 0){
+				Calendar dataEntrega = Calendar.getInstance();
+				dataEntrega.add(Calendar.DATE, 15);
+				emprestimo.setDataAluguel(Calendar.getInstance());
+				emprestimo.setDataEntrega(dataEntrega);
+				emprestimo.getLivro().setExemplares(emprestimo.getLivro().getExemplares() -1);
+				repositorioLivros.atualizar(emprestimo.getLivro());
+				this.repositorio.cadastrar(emprestimo);
+			}else
+				throw new NegocioException("Não existem exemplares do livro disponíveis");
 		}
 		else
 			throw new NegocioException("O Emprestimo já está cadastrado");

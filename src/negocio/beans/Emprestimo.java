@@ -102,4 +102,9 @@ public class Emprestimo implements Serializable{
 				/ (24 * 60 * 60 * 1000);
 		return (2*dias);
 	}
+	@Override
+	public boolean equals(Object o){
+		return this.livro.getIsbn() == ((Emprestimo) o).getLivro().getIsbn() &&
+				this.aluno.getCpf() == ((Emprestimo) o).getAluno().getCpf();
+	}
 }
