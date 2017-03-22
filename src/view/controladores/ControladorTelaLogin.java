@@ -22,9 +22,13 @@ public class ControladorTelaLogin extends AnchorPane {
 	public ControladorTelaLogin(){
 		try{
 			FXMLLoader loader = new FXMLLoader(ControladorTelaLogin.class.getClass().getResource("/view/fxmls/TelaLogin.fxml"));
-			loader.setRoot(this);
+			//loader.setRoot(null);
+			//loader.setRoot(this);
 			loader.setController(this);
+			
+			this.getChildren().add(loader.load());
 		}catch(Exception e){
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 	 	

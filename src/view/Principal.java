@@ -23,7 +23,7 @@ public class Principal extends Application{
 	public static void mudarTela(Parent painel){
 		estagioPrincipal.setScene(new Scene(painel));
 		estagioPrincipal.centerOnScreen();
-		estagioPrincipal.getScene().setFill(Color.BLACK);
+		//estagioPrincipal.getScene().setFill(Color.BLACK);
 		estagioPrincipal.show();
 	}
 	public static void main(String args[]){
